@@ -12,14 +12,14 @@ $(function () {
 
     $('.btn_ham').on('click', function () {
         $(this).toggleClass('on');
-        // $('.ham_nav').toggleClass('on');
+        $(this).parent().find('.ham_nav').toggleClass('on');
     });
 
-    $('.ham_nav>ul>li').on('click', function (e) {
+    $('.ham_nav>ul>li>a').on('click', function (e) {
         e.preventDefault();
 
-        let idx = $('.ham_nav>ul>li').index();
-        $('.ham_con').eq(idx).addClass('on').siblings().removeClass('on');
+        let idx = $(this).parent().index();
+        $(this).parent().children('.ham_con').eq(idx).addClass('on').siblings().removeClass('on');
     });
 
     $('.main_slide').slick({

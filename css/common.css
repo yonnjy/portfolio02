@@ -79,3 +79,7 @@ p {
 .slick-list {
     transition-delay: 30ms;
 }
+
+.arrows {
+    user-select: none;
+}
