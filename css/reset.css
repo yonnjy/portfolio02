@@ -51,5 +51,8 @@ input::-webkit-search-results-decoration{
 
 button {
     border: none;
-    background: inherit;
+    outline: none;
+    background: none;
+    user-select: none;
+    cursor: pointer;
 }
