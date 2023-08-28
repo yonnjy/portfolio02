@@ -1,7 +1,3 @@
-* {
-    /* outline: 1px solid rgba(255, 127, 127, 0.2); */
-}
-
 /* header */
 .header {
     position: sticky;
@@ -319,11 +315,6 @@
     color: #888;
 }
 
-
-
-
-
-
 .btn_ham::before,
 .btn_ham::after {
     content: "";
@@ -331,15 +322,14 @@
     inset: 22px 5px auto 5px;
     height: 2px;
     background: #444;
+    transition: 0.5s;
 }
 
 .btn_ham.on::before {
-    transition: 0.5s 0.5s;
     transform: rotate(45deg);
 }
 
 .btn_ham.on::after {
-    transition: 0.5s 0.5s;
     transform: rotate(-45deg);
 }
 
@@ -365,8 +355,8 @@
     inset: auto 5px 15px 5px;
 }
 
-.mobile_btn.on button::before,
-.mobile_btn.on button::after {
+.btn_ham.on button::before,
+.btn_ham.on button::after {
     display: none;
 }
 
@@ -476,7 +466,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -9px);
+    transform: translate(-50%, -11px);
     max-width: 120px;
     width: 100%;
     color: #fff;
@@ -546,8 +536,31 @@
 }
 
 /* style_h */
+
 .main_style {
-    background: #f9f9f9;
+    position: relative;
+}
+
+.main_style::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 40px;
+    height: 2px;
+    background: #ddd;
+}
+
+.main_style::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 40px;
+    height: 2px;
+    background: #ddd;
 }
 
 .main_style ul {
@@ -556,7 +569,7 @@
     padding: 70px 30px;
     align-items: center;
     justify-content: space-between;
-    background: #fff;
+    background: #f9f9f9;
 }
 
 .main_style ul::before {
@@ -835,7 +848,7 @@
     position: absolute;
     bottom: 50%;
     left: 50%;
-    transform: translate(-50%, 60px);
+    transform: translate(-50%, 72px);
     border-radius: 50px;
     background: rgba(255, 255, 255, 0.5);
     color: #ddd;
@@ -848,13 +861,16 @@
 }
 
 .main_col .btn a {
-    display: block;
+    display: flex;
     font-size: 14px;
     padding: 10px 40px;
+    align-items: center;
 }
 
-.main_col .btn span {
-    margin: 0 6px 0 0;
+.main_col .btn strong {
+    display: block;
+    font-size: 18px;
+    margin: 0 0 0 15px;
 }
 
 .main_col .btn i {
@@ -1007,11 +1023,22 @@
     transition: 1s;
 }
 
+.main_fly .easy .txt_box span {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+}
+
 .main_fly .easy .txt_box strong {
     display: block;
     font-size: 20px;
     font-weight: 500;
-    margin: 0 0 15px 0;
+    margin: 0 0 12px 0;
+}
+
+.main_fly .easy .txt_box p {
+    font-size: 14px;
 }
 
 /* footer */
@@ -1128,15 +1155,20 @@
     line-height: 20px;
 }
 
+.footer .footer_b .sns {
+    display: flex;
+    gap: 20px;
+}
+
 .footer .footer_b .sns i {
     font-size: 18px;
-    margin: 0 0 0 10px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.footer .footer_b .sns i:hover {
-    color: #bfae90;
+.footer .footer_b .sns img {
+    width: 18px;
+    filter: invert() brightness(45%);
 }
 
 /* btn_list */
@@ -1190,7 +1222,7 @@
     visibility: visible;
 }
 
-.btn_list .to_top i {
+.btn_list .to_top span {
     color: #c472f8;
     background: #f0f0f0;
     width: 60px;
@@ -1203,9 +1235,6 @@
 }
 
 @media (max-width: 768px) {
-    * {
-        /* outline: 1px solid red; */
-    }
 
     body {
         overflow-x: hidden;
@@ -1255,6 +1284,153 @@
     .header .header_b .img_box {
         display: none;
     }
+
+    .header .search {
+        display: none;
+        /* 수정 */
+    }
+
+
+    .btn_ham {
+        position: fixed;
+        top: 6px;
+        right: 10px;
+    }
+    
+    
+    .btn_ham .ham_nav {
+        position: absolute;
+        top: 53px;
+        left: -340px;
+        background: #fff;
+        width: calc(100vw + 10px);
+        height: 100vh;
+        padding: 32px 20px 0;
+        border: 1px solid #eee;
+    
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .btn_ham:hover .ham_nav {
+        visibility: visible;
+        opacity: 1;
+        transition: 0.3s;
+    }
+    
+    .btn_ham .ham_list {
+        position: relative;
+    }
+    
+    .btn_ham .ham_list::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 130px;
+        transform: translate(0, -50%);
+    
+        width: 1px;
+        height: 100%;
+        background: #ddd;
+    }
+    
+    .btn_ham .ham_list>li>a {
+        line-height: 32px;
+        transition: 0.3s;
+        font-weight: 500;
+    }
+    
+    .btn_ham .ham_list>li:hover>a {
+        color: #bfae90;
+    }
+    
+    .btn_ham .ham_list>li:hover .ham_con {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .btn_ham:hover .ham_con.on {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .btn_ham .ham_con {
+        height: 100vw;
+        overflow-y: scroll;
+
+        visibility: visible;
+        opacity: 1;
+
+
+
+    
+        padding: 0 0 0 0px;
+        display: flex;
+    
+        position: absolute;
+        top: 0;
+        left: 168px;
+    
+        background: #fff;
+    }
+    
+    .btn_ham .ham_con .left {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .btn_ham .ham_con .left ul {
+        position: relative;
+    }
+    
+    .btn_ham .ham_con .left ul::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        transform: translate(0, -50%);
+    
+        width: 1px;
+        height: 100%;
+        background: #f9f9f9;
+    }
+    
+    .btn_ham .ham_con .left li {
+        width: 210px;
+    }
+    
+    .btn_ham .ham_con .left li a {
+        line-height: 30px;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+    
+    .btn_ham .ham_con .left li:hover a {
+        color: #bfae90;
+    }
+    
+    .btn_ham .ham_con .right a {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .btn_ham .ham_con .right .img_box {
+        margin: 0 0 16px 0;
+    }
+    
+    .btn_ham .ham_con .right strong {
+        display: block;
+        margin: 0 0 8px 0;
+        font-size: 15px;
+        font-weight: 700;
+    }
+    
+    .btn_ham .ham_con .right span {
+        font-size: 14px;
+        color: #888;
+    }
+
+
 
     .main_vi .main_slide .itm {
         height: 500px;

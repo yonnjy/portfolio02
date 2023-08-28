@@ -85,6 +85,13 @@ $(function () {
         $(this).next().toggleClass('on');
     })
 
+    $('.chatbot').on('click', function(){
+        Swal.fire({
+            title: '로그인 해주세요.',
+            text: 'H.Point 통합 회원만 이용 가능합니다.',
+        });
+    })
+
     $('.btn_list .to_top').on('click', function () {
         $('html, body').animate({ scrollTop: 0 }, 500);
     });
