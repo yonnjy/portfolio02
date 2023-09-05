@@ -33,7 +33,7 @@
 }
 
 .header .header_t>ul>li>a {
-    font-size: 14px;
+    font-size: 4;
 }
 
 .header .header_t .now {
@@ -1268,6 +1268,10 @@
 
     .header {
         height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
     }
 
     .header h1 {
@@ -1454,14 +1458,9 @@
         display: none;
     }
 
-
-
-
-
-
-
     .main_vi .main_slide .itm {
         height: 500px;
+        margin-top: 60px;
     }
 
     .main_vi .main_slide .itm01 {
@@ -1590,21 +1589,15 @@
 
     .main_prem .prem_list {
         display: flex;
-        justify-content: flex-start;
-        border: 1px solid #bfae90;
+        justify-content: space-between;
+        border: none;
         margin: 0 0 15px 0;
     }
 
-
     .main_prem .prem_list>li {
-        padding: 10px 25px;
+        padding: 10px 20px;
         font-size: 15px;
-        border-top: none;
-        border-left: none;
-    }
-
-    .main_prem .prem_list>li~li {
-        border-left: 1px solid #bfae90;
+        border: 1px solid #bfae90;
     }
 
     .main_prem .prem_wrap {
