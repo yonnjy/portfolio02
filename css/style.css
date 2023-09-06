@@ -1088,24 +1088,29 @@
     gap: 20px;
 }
 
-.footer .footer_t .site span {
+.footer .footer_t .site strong {
     display: block;
-    padding: 7px 0 7px 5px;
-    width: 135px;
+    padding: 7px 14px 7px 20px;
+    width: 153px;
     border: 1px solid #ddd;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.footer .footer_t .site span:hover {
+.footer .footer_t .site span {
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.footer .footer_t .site strong:hover {
     background: #fff;
 }
 
-.footer .footer_t .site span.on {
+.footer .footer_t .site strong.on {
     background: #fff;
 }
 
-.footer .footer_t .site span.on i {
+.footer .footer_t .site strong.on span {
     transform: rotate(180deg);
 }
 
@@ -1116,8 +1121,8 @@
 .footer .footer_t .site ul {
     display: none;
     position: absolute;
-    bottom: 28px;
-    width: 135px;
+    bottom: 33px;
+    width: 153px;
     border: 1px solid #ddd;
     background: #fff;
 }
@@ -1873,10 +1878,10 @@
         order: -1;
     }
 
-    .footer .footer_t .site span {
+    .footer .footer_t .site strong {
         display: block;
-        padding: 7px 0 7px 5px;
-        width: 135px;
+        padding: 7px 14px 7px 20px;
+        width: 153px;
         border: 1px solid #ddd;
         cursor: pointer;
         transition: 0.3s;

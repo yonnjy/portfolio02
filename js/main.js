@@ -87,7 +87,7 @@ $(function () {
         $('.prem_slide').slick('slickNext');
     });
 
-    $('.family_site span').on('click', function () {
+    $('.family_site strong').on('click', function () {
         $(this).toggleClass('on');
         $(this).next().toggleClass('on');
     })
